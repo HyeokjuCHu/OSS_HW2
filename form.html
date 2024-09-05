@@ -7,61 +7,109 @@
   <title>Document</title>
 
   <style>
-    #Bill {
-      float: left;
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+      
     }
 
-    #name,
-    #sname,
-    #input-group-text,
-    #countryL,
-    #state,
-    #zip {
-      float: left;
+    #Bill {
+      width: 100%;
+      max-width: 600px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+    }
+
+    #h2B{
+        text-align: center;
+    }
+    #h2p{
+        text-align: center;
     }
 
     .form-row {
       display: flex;
+      justify-content: space-between;
       gap: 15px;
-      /* Adds some space between the items */
       align-items: center;
-      /* Aligns items vertically centered */
+      margin-bottom: 15px;
     }
 
     .form-row select,
     .form-row input {
       width: 100%;
-      /* Adjust width as needed */
       padding: 5px;
+      box-sizing: border-box;
     }
 
     .form-group {
-      margin-bottom: 10px;
-      /* Adds some margin between form groups */
       flex: 1;
-      /* Makes the flex items take equal width */
+    }
+
+    .payment-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .payment-row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .payment-group {
+      flex: 1;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: rgb(13, 110, 253);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #87CEEB;
+    }
+
+    hr {
+      margin: 20px 0;
     }
   </style>
 
 </head>
 
 <body>
-  <div id="top">
-    <h2>Checkout form</h2>
-    <p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a <br>
-      validation state that can be triggered by attempting to submit the form without completing it.</p>
-  </div>
   <div id="Bill">
+    <h2 id="h2B">Checkout form</h2>
+    <p id="h2p">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a <br>
+      validation state that can be triggered by attempting to submit the form without completing it.</p>
     <h3>Billing address</h3>
     <form action="form2.html">
-      <div id="name">
-        <label for="firstName">First name</label><br>
-        <input type="text" id="firstN" name="firstName"><br>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstN">First name</label><br>
+          <input type="text" id="firstN" name="firstName">
+        </div>
+        <div class="form-group">
+          <label for="lastN">Last name</label><br>
+          <input type="text" id="lastN" name="lastName">
+        </div>
       </div>
-      <div id="sname">
-        <label for="lastName">Last name</label><br>
-        <input type="text" id="firstN" name="lastName"><br>
-      </div>
+      
       <div id="userN">
         <label for="username">Username</label><br>
         <span>@</span>
@@ -130,6 +178,32 @@
             <label for="paypal">PayPal</label>
           </div>
         </div>
+        <div class="payment-details">
+          <div class="payment-row">
+            <div class="payment-group">
+              <label for="nameC">Name on card</label>
+              <input type="text" id="nameC">
+            </div>
+            <div class="payment-group">
+              <label for="cardN">Credit card number</label>
+              <input type="text" id="cardN">
+            </div>
+          </div>
+          <small>Full name as displayed on card</small>
+          <div class="payment-row">
+            <div class="payment-group">
+              <label for="Expiration">Expiration</label>
+              <input type="text" id="Expiration">
+            </div>
+            <div class="payment-group">
+              <label for="CVV">CVV</label>
+              <input type="text" id="CVV">
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <button type="submit">Continue to checkout</button>
       </div>
     </form>
   </div>
