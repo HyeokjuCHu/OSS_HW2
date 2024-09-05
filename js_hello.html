@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button.btn1 {
+            background-color: green;
+            color: white;
+        }
+    </style>
+
+    <script>
+
+        function check() {
+            let title = document.form1.title;
+            if (title.value == '') {
+                alert("제목 입력해!");
+                title.focus();
+                return false;
+            }
+
+            let name = document.form1.uname;
+            if (name.value == '') {
+                alert("이름 입력해!");
+                name.focus();
+                return false;
+            }
+
+            let content = document.form1.title;
+            if (content.value == '') {
+                alert("내용 입력해!");
+                content.focus();
+                return false;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <script>
+
+        const car = {};
+        car.name = "Genesis";
+        car.year = "2024";
+
+        let myCar = {
+            name: 'Ford',
+            year: 2015,
+            print: function () {
+                return "Car Info [" + this.name + this.year;
+            }
+        };
+
+
+        document.write(myCar.print());
+
+    </script>
+
+</body>
+
+</html>

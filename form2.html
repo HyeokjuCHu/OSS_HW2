@@ -1,11 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    #Bill {
+      float: left;
+    }
+
+    #name,
+    #sname,
+    #input-group-text,
+    #countryL,
+    #state,
+    #zip {
+      float: left;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px; /* Adds some space between the items */
+      align-items: center; /* Aligns items vertically centered */
+    }
+
+    .form-row select,
+    .form-row input {
+      width: 100%; /* Adjust width as needed */
+      padding: 5px;
+    }
+
+    .form-group {
+      margin-bottom: 10px; /* Adds some margin between form groups */
+      flex: 1; /* Makes the flex items take equal width */
+    }
+  </style>
+
 </head>
+
 <body>
-    form2.html
+  <div id="top">
+    <h2>Checkout form</h2>
+    <p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a <br>
+      validation state that can be triggered by attempting to submit the form without completing it.</p>
+  </div>
+  <div id="Bill">
+    <form action="form2.html">
+      <div id="name">
+        <label for="firstName">First name</label><br>
+        <input type="text" id="firstN" name="firstName"><br>
+      </div>
+      <div id="sname">
+        <label for="lastName">Last name</label><br>
+        <input type="text" id="firstN" name="lastName"><br>
+      </div>
+      <div id="userN">
+        <label for="username">Username</label><br>
+        <span>@</span>
+        <input type="text" id="username" placeholder="Username"><br>
+      </div>
+      <div id="email">
+        <label for="email">Email (Optional)</label><br>
+        <input type="text" id="email" name="email" placeholder="you@example.com"><br>
+      </div>
+      <div id="Address">
+        <label for="address">Address</label><br>
+        <input type="text" id="address" name="address" placeholder="1234 Main St"><br>
+      </div>
+      <div id="Address2">
+        <label for="address2">Address 2 (Optional)</label><br>
+        <input type="text" id="address2" name="address2" placeholder="Apartment or suite"><br>
+      </div>
+
+      <!-- Flex container for country, state, and zip -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="countryL">Country</label><br>
+          <select id="countryL">
+            <option value>Choose...</option>
+            <option>South Korea</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="state">State</label><br>
+          <select id="state">
+            <option value>Choose...</option>
+            <option>Seoul</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="zip">Zip</label><br>
+          <input type="text" id="zip" name="zip">
+        </div>
+      </div>
+      <hr>
+    </form>
+  </div>
 </body>
+
 </html>

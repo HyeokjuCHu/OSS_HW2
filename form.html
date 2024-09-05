@@ -7,40 +7,52 @@
   <title>Document</title>
 
   <style>
-
-    #Bill{
-      float: left;
-    }
-    #name {
+    #Bill {
       float: left;
     }
 
-    #sname {
-      float: left;
-    }
-    #input-group-text{
-      float:left;
-    }
-
-    #username{
+    #name,
+    #sname,
+    #input-group-text,
+    #countryL,
+    #state,
+    #zip {
       float: left;
     }
 
+    .form-row {
+      display: flex;
+      gap: 15px;
+      /* Adds some space between the items */
+      align-items: center;
+      /* Aligns items vertically centered */
+    }
+
+    .form-row select,
+    .form-row input {
+      width: 100%;
+      /* Adjust width as needed */
+      padding: 5px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+      /* Adds some margin between form groups */
+      flex: 1;
+      /* Makes the flex items take equal width */
+    }
   </style>
 
 </head>
 
-
-
-
 <body>
   <div id="top">
     <h2>Checkout form</h2>
-    <p>Below is an example form built entirely with Bootstrap’s
-      form controls. Each required form group has a <br>
+    <p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a <br>
       validation state that can be triggered by attempting to submit the form without completing it.</p>
   </div>
   <div id="Bill">
+    <h3>Billing address</h3>
     <form action="form2.html">
       <div id="name">
         <label for="firstName">First name</label><br>
@@ -51,8 +63,9 @@
         <input type="text" id="firstN" name="lastName"><br>
       </div>
       <div id="userN">
-        <span class="input-group-text">@</span>
-        <input type="text" id="username" placeholder="Username">
+        <label for="username">Username</label><br>
+        <span>@</span>
+        <input type="text" id="username" placeholder="Username"><br>
       </div>
       <div id="email">
         <label for="email">Email (Optional)</label><br>
@@ -67,15 +80,59 @@
         <input type="text" id="address2" name="address2" placeholder="Apartment or suite"><br>
       </div>
 
-      <div id="country">
-
+      <!-- Flex container for country, state, and zip -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="countryL">Country</label><br>
+          <select id="countryL">
+            <option value>Choose...</option>
+            <option>South Korea</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="state">State</label><br>
+          <select id="state">
+            <option value>Choose...</option>
+            <option>Seoul</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="zip">Zip</label><br>
+          <input type="text" id="zip" name="zip">
+        </div>
       </div>
-      
+      <hr>
+      <br>
+      <div>
+        <input type="checkbox" id="same-address">
+        <label for="same-address">Shipping address is the same as my billing address</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="save-info">
+        <label for="save-info">Save this information for next time</label>
+      </div>
+      <br>
+      <hr>
+      <div id="payment">
+        <h3>Payment</h3>
+        <div>
+          <div>
+            <input id="credit" name="paymentMethod" type="radio" checked>
+            <label for="credit">Credit card</label>
+          </div>
+          <div>
+            <input id="debit" name="paymentMethod" type="radio">
+            <label for="debit">Debit card</label>
+          </div>
+          <div>
+            <input id="paypal" name="paymentMethod" type="radio">
+            <label for="paypal">PayPal</label>
+          </div>
+        </div>
+      </div>
     </form>
   </div>
-
-
-
 </body>
 
 </html>
