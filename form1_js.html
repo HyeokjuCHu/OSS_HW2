@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    #Bill {
+      width: 100%;
+      max-width: 600px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+    }
+
+    #h2B,
+    #h2p {
+      text-align: center;
+    }
+
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .form-row select,
+    .form-row input {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-group {
+      flex: 1;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: rgb(13, 110, 253);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #87CEEB;
+    }
+
+    hr {
+      margin: 20px 0;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="Bill">
+    <h2 id="h2B">Checkout form</h2>
+    <p id="h2p">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a <br>
+      validation state that can be triggered by attempting to submit the form without completing it.</p>
+    <h3>Billing address</h3>
+    <form id="checkoutForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstN">First name</label><br>
+          <input type="text" id="firstN" name="firstName">
+          <div class="error" id="firstNError"></div>
+        </div>
+        <div class="form-group">
+          <label for="lastN">Last name</label><br>
+          <input type="text" id="lastN" name="lastName">
+          <div class="error" id="lastNError"></div>
+        </div>
+      </div>
+
+      <div id="userN">
+        <label for="username">Username</label><br>
+        <span>@</span>
+        <input type="text" id="username" placeholder="Username"><br>
+        <div class="error" id="usernameError"></div>
+      </div>
+
+      <div id="email">
+        <label for="email">Email (Optional)</label><br>
+        <input type="email" id="email" name="email" placeholder="you@example.com"><br>
+      </div>
+
+      <div id="Address">
+        <label for="address">Address</label><br>
+        <input type="text" id="address" name="address" placeholder="1234 Main St"><br>
+        <div class="error" id="addressError"></div>
+      </div>
+
+      <div id="Address2">
+        <label for="address2">Address 2 (Optional)</label><br>
+        <input type="text" id="address2" name="address2" placeholder="Apartment or suite"><br>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="countryL">Country</label><br>
+          <select id="countryL">
+            <option value>Choose...</option>
+            <option>South Korea</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="state">State</label><br>
+          <select id="state">
+            <option value>Choose...</option>
+            <option>Seoul</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="zip">Zip</label><br>
+          <input type="text" id="zip" name="zip">
+          <div class="error" id="zipError"></div>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <input type="checkbox" id="same-address">
+        <label for="same-address">Shipping address is the same as my billing address</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="save-info">
+        <label for="save-info">Save this information for next time</label>
+      </div>
+      <hr>
+      <div id="payment">
+        <h3>Payment</h3>
+        <div>
+          <div>
+            <input id="credit" name="paymentMethod" type="radio" checked>
+            <label for="credit">Credit card</label>
+          </div>
+          <div>
+            <input id="debit" name="paymentMethod" type="radio">
+            <label for="debit">Debit card</label>
+          </div>
+          <div>
+            <input id="paypal" name="paymentMethod" type="radio">
+            <label for="paypal">PayPal</label>
+          </div>
+        </div>
+        <div class="payment-details">
+          <div class="payment-row">
+            <div class="payment-group">
+              <label for="nameC">Name on card</label>
+              <input type="text" id="nameC">
+              <div class="error" id="nameCError"></div>
+            </div>
+            <div class="payment-group">
+              <label for="cardN">Credit card number</label>
+              <input type="text" id="cardN">
+              <div class="error" id="cardNError"></div>
+            </div>
+          </div>
+          <div class="payment-row">
+            <div class="payment-group">
+              <label for="Expiration">Expiration</label>
+              <input type="text" id="Expiration">
+              <div class="error" id="ExpirationError"></div>
+            </div>
+            <div class="payment-group">
+              <label for="CVV">CVV</label>
+              <input type="text" id="CVV">
+              <div class="error" id="CVVError"></div>
+            </div>
+          </div>
+        </div>
+        <button type="submit">Continue to checkout</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("checkoutForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      // 간단한 Validation
+      let isValid = true;
+      const requiredFields = ["firstN", "lastN", "username", "address", "zip", "nameC", "cardN", "Expiration", "CVV"];
+      
+      requiredFields.forEach(field => {
+        const input = document.getElementById(field);
+        const error = document.getElementById(field + "Error");
+        
+        if (input.value.trim() === "") {
+          error.textContent = "This field is required.";
+          isValid = false;
+        } else {
+          error.textContent = "";
+        }
+      });
+
+      if (isValid) {
+        alert("Form is valid!");
+        // Form can be submitted or further processed here.
+      }
+    });
+  </script>
+</body>
+
+</html>

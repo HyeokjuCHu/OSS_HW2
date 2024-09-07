@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Web Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #add{
+            background-color: blue;
+            color: white;
+        }
+
+        #delete{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dynamic Web Page</h1>
+
+    <form id="fruitForm">
+        <input type="text" id="fruit">
+        <button id="add" type="button" onclick="addFruits()">추가</button>
+        <button id="delete" type="button" onclick="removeFruit()">삭제</button>
+    </form>
+
+    <ul id="fruitList"></ul>
+
+    <script>
+        function addFruits() {
+            const fruitInput = document.getElementById('fruit');
+            const fruits = [];
+            fruitInput.value.split(',').forEach((fruit) => {
+                fruits.push(fruit.trim());
+            });
+
+
+            const fruitList = document.getElementById('fruitList');
+
+            fruits.forEach(fruitName => {
+                if (fruitName) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = fruitName;
+                    fruitList.appendChild(listItem);
+                }
+            });
+
+            fruitInput.value = '';
+        }
+
+        function removeFruit() {
+            const fruitList = document.getElementById('fruitList');
+            if (fruitList.lastChild) {
+                fruitList.removeChild(fruitList.lastChild);
+            }
+        }
+    </script>
+</body>
+
+</html>
