@@ -202,9 +202,8 @@
 
   <script>
     document.getElementById("checkoutForm").addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent form submission
+      event.preventDefault();
 
-      // 간단한 Validation
       let isValid = true;
       const requiredFields = ["firstN", "lastN", "username", "address", "zip", "nameC", "cardN", "Expiration", "CVV"];
       
@@ -222,7 +221,6 @@
 
       if (isValid) {
         alert("Form is valid!");
-        // Form can be submitted or further processed here.
       }
     });
   </script>
